@@ -1,0 +1,11 @@
+SELECT DISTINCT Apellido FROM empleados;
+SELECT * FROM empleados WHERE Apellido='Lopez';
+SELECT * FROM `empleados` where Apellido='Lopez' OR Apellido='Perez';
+SELECT * FROM `empleados` where id_departamento=14;
+SELECT * FROM `empleados` where id_departamento=77 or id_departamento=37;
+SELECT * FROM empleados WHERE Apellido LIKE 'P%';
+SELECT id_departamento,COUNT(*) FROM empleados GROUP BY id_departamento;
+SELECT * FROM empleados INNER JOIN departamentos ON empleados.id_departamento=departamentos.id_departamento;
+SELECT Apellido,Nombre,departamentos.Departamento,departamentos.Presupuesto FROM empleados INNER JOIN departamentos ON empleados.id_departamento=departamentos.id_departamento;
+SELECT Apellido,Nombre,departamentos.Departamento,departamentos.Presupuesto FROM empleados INNER JOIN departamentos ON empleados.id_departamento=departamentos.id_departamento WHERE Presupuesto>60000;
+INSERT INTO departamentos VALUES (11,'Calidad',40000); INSERT INTO empleados VALUES (0,'Vazquez','Esther',41564564,11)
